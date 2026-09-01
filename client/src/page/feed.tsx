@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import Popup from "reactjs-popup";
 import { Link, useLocation } from "wouter";
 import { useAlert, useConfirm } from "../components/dialog";
-import { HashTag } from "../components/hashtag";
 import { ImageWithFallback } from "../components/image-with-fallback";
 import { Waiting } from "../components/loading";
 import { Markdown } from "../components/markdown";
@@ -152,10 +151,6 @@ export function FeedPage({ id, TOC, clean }: { id: string, TOC: () => JSX.Elemen
           />
           <meta name="author" content={feed.user.username} />
           <meta
-            name="keywords"
-            content={hashtags.map(({ name }) => name).join(", ")}
-          />
-          <meta
             name="description"
             content={
               feed.content.length > 200
@@ -284,13 +279,6 @@ export function FeedPage({ id, TOC, clean }: { id: string, TOC: () => JSX.Elemen
                 )}
                 <Markdown content={feed.content} />
                 <div className="mt-6 flex flex-col gap-2">
-                  {hashtags.length > 0 && (
-                    <div className="flex flex-row flex-wrap gap-x-2">
-                      {hashtags.map(({ name }, index) => (
-                        <HashTag key={index} name={name} />
-                      ))}
-                    </div>
-                  )}
                   <div className="flex min-w-0 flex-row items-center">
                     <ImageWithFallback
                       src={feed.user.avatar || "/avatar.png"}
