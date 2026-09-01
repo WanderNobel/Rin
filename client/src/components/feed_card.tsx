@@ -105,7 +105,6 @@ export type FeedCardProps = {
 export function FeedCard({ id, title, avatar, draft, listed, top, summary, hashtags, createdAt, updatedAt, preview = false, variant }: FeedCardProps) {
     const { t } = useTranslation();
     const siteConfig = useSiteConfig();
-    const safeHashtags = Array.isArray(hashtags) ? hashtags : [];
     const activeVariant = normalizeFeedCardVariant(variant ?? siteConfig.feedCardVariant);
     const styles = FEED_CARD_STYLES[activeVariant];
     const body = (
@@ -133,13 +132,6 @@ export function FeedCard({ id, title, avatar, draft, listed, top, summary, hasht
                     {top === 1 && <span className="text-theme">{t('article.top.title')}</span>}
                 </p>
                 <p className={`whitespace-pre-line break-words [overflow-wrap:anywhere] ${styles.summary} ${activeVariant === "editorial" ? "mt-4 max-w-3xl" : ""}`}>{summary}</p>
-                {safeHashtags.length > 0 &&
-                    <div className={`flex flex-row flex-wrap justify-start gap-2 ${activeVariant === "editorial" ? "mt-4" : "mt-2 gap-x-2"}`}>
-                        {safeHashtags.map(({ name }, index) => (
-                            <HashTag key={index} name={name} />
-                        ))}
-                    </div>
-                }
             </div>
         </div>
     );
