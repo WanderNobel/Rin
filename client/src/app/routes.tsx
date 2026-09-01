@@ -17,8 +17,6 @@ import { FeedPage, TOCHeader } from "../page/feed";
 import { FeedsPage } from "../page/feeds";
 import { FriendsPage } from "../page/friends";
 import { HealthPage } from "../page/health";
-import { HashtagPage } from "../page/hashtag";
-import { HashtagsPage } from "../page/hashtags";
 import { LoginPage } from "../page/login";
 import { MomentsPage } from "../page/moments";
 import { ProfilePage } from "../page/profile";
@@ -50,14 +48,6 @@ export function AppRoutes() {
 
       <AppRoute path="/friends">
         <FriendsPage />
-      </AppRoute>
-
-      <AppRoute path="/hashtags">
-        <HashtagsPage />
-      </AppRoute>
-
-      <AppRoute path="/hashtag/:name">
-        {(params) => <HashtagPage name={params.name || ""} />}
       </AppRoute>
 
       <AppRoute path="/search/:keyword">
