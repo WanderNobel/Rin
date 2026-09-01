@@ -46,7 +46,7 @@ export function FeedPage({ id, TOC, clean }: { id: string, TOC: () => JSX.Elemen
   const counterEnabled = config.getBoolean('counter.enabled');
   const hasAISummary = Boolean(feed?.ai_summary?.trim());
   const showAISummaryState = feed?.ai_summary_status === "pending" || feed?.ai_summary_status === "processing" || feed?.ai_summary_status === "failed";
-  const hashtags = Array.isArray(feed?.hashtags) ? feed.hashtags : [];
+ // const hashtags = Array.isArray(feed?.hashtags) ? feed.hashtags : [];
   function deleteFeed() {
     // Confirm
     showConfirm(
