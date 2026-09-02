@@ -39,7 +39,7 @@ export function AppRoutes() {
         <FeedsPage />
       </AppRoute>
 
-      <AppRoute path="/articles"
+      <AppRoute path="/articles">
         <ArticlesPage />
       </AppRoute>
 
