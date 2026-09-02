@@ -42,20 +42,27 @@ export function FeedsPage() {
     const currentFeedData = Array.isArray(currentFeeds.data) ? currentFeeds.data : [];
     const ref = useRef("")
     function fetchFeeds(type: FeedType) {
-        client.feed.list({
-            page: page,
-            limit: limit,
-            type: type
-        }).then(({ data }) => {
-            if (data) {
-                setFeeds({
-                    ...feeds,
-                    [type]: data
-                })
-                setStatus('idle')
-            }
-        })
-    }
+    client.feed.list({
+        page: page,
+        limit: limit,
+        type: type
+    }).then(({ data }) => {
+        if (data) {
+            // Filter out posts that have the "article" tag
+            const filteredData = {
+                ...data,
+                data: data.data.filter(post => 
+                    !post.hashtags?.some(tag => tag.name === "article")
+                )
+            };
+            setFeeds({
+                ...feeds,
+                [type]: filteredData
+            })
+            setStatus('idle')
+        }
+    })
+}
     useEffect(() => {
         const key = `${query.get("page")} ${query.get("type")} ${limit}`
         if (ref.current == key) return
