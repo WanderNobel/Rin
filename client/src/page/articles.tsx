@@ -46,7 +46,7 @@ export function FeedsPage() {
             page: page,
             limit: limit,
             type: type,
-            hastags: ["article"]
+            hashtags: ["article"]
         }).then(({ data }) => {
             if (data) {
                 setFeeds({
