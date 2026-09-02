@@ -92,7 +92,7 @@ export function FeedsPage() {
                         </p>
                         <div className="flex flex-row justify-between">
                             <p className="text-sm mt-4 text-neutral-500 font-normal">
-                                {t('article.total$count', { count: currentFeeds.size })}
+                                {t('article.total$count', { count: currentFeeds.data.length })}
                             </p>
                             {profile?.permission &&
                                 <div className="flex flex-row space-x-4">
