@@ -23,6 +23,7 @@ import { ProfilePage } from "../page/profile";
 import { QueueStatusPage } from "../page/queue-status";
 import { SearchPage } from "../page/search";
 import { Settings } from "../page/settings";
+import { ArticlesPage } from "../page/articles";
 import { TimelinePage } from "../page/timeline";
 import { WritingPage } from "../page/writing";
 import { ProfileContext } from "../state/profile";
@@ -36,6 +37,10 @@ export function AppRoutes() {
     <Switch>
       <AppRoute path="/">
         <FeedsPage />
+      </AppRoute>
+
+      <AppRoute path="/articles"
+        <ArticlesPage />
       </AppRoute>
 
       <AppRoute path="/timeline">
