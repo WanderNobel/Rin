@@ -23,7 +23,7 @@ type FeedsMap = {
     [key in FeedType]: FeedsData
 }
 
-export function FeedsPage() {
+export function ArticlesPage() {
     const { t } = useTranslation()
     const siteConfig = useSiteConfig();
     const query = new URLSearchParams(useSearch());
