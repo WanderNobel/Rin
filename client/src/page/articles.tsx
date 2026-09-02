@@ -45,7 +45,7 @@ export function FeedsPage() {
         client.feed.list({
             page: page,
             limit: limit,
-            type: type
+            type: type,
             hastags: ["article"]
         }).then(({ data }) => {
             if (data) {
