@@ -227,7 +227,7 @@
   "moments": {
     "edit": "Edit Moment",
     "publish": "Publish Moment",
-    "title": "Moments",
+    "title": "Photos",
     "total$count_one": "{{count}} moment in total",
     "total$count_other": "{{count}} moments in total"
   },
