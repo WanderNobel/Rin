@@ -77,7 +77,7 @@ export function FeedsPage() {
     return (
         <>
             <Helmet>
-                <title>{`${t('article.title')} - ${siteConfig.name}`}</title>
+                <title>{`Blog - ${siteConfig.name}`}</title>
                 <meta property="og:site_name" content={siteName} />
                 <meta property="og:title" content={t('article.title')} />
                 <meta property="og:image" content={siteConfig.avatar} />
@@ -88,7 +88,7 @@ export function FeedsPage() {
                 <main className="w-full flex flex-col justify-center items-center mb-8">
                     <div className="wauto text-start text-black dark:text-white py-4 text-4xl font-bold">
                         <p>
-                            {listState === 'draft' ? t('draft_bin') : listState === 'normal' ? t('article.title') : t('unlisted')}
+                            Blog
                         </p>
                         <div className="flex flex-row justify-between">
                             <p className="text-sm mt-4 text-neutral-500 font-normal">
